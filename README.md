@@ -141,7 +141,7 @@ Note: Email search is not guaranteed to find an email for every profile. If a pr
 |---|---|
 | companyName, companyWebsite, companyLinkedinUrl, jobTitle, location, fit_score, fit_reason | contact1_name, contact1_headline, contact1_linkedin, contact1_email, contact2_..., contact3_... |
 
-Import directly into Google Sheets for outreach.
+All CSV outputs are formatted for direct import into Google Sheets (File > Import > Upload > select the CSV). Leads are sorted by `fit_score` so the hottest prospects are at the top.
 
 ## Cost Summary
 
