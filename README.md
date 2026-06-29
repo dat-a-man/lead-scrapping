@@ -123,7 +123,17 @@ python3 3_find_contacts.py \
 
 4. **Ranks contacts** by seniority: CXO/Chief > VP > Head/Director > Principal/Staff > Manager/Lead > Senior
 
-**Cost:** ~$0.02 per company (actor start) + ~$0.003 per profile. With CTO fallback for ~40% of companies, expect roughly $0.03 per company total.
+**Email lookup:** The script uses short profile mode by default ($4/1k). The Apify actor also supports email discovery — change `profileScraperMode` in the script to find verified emails:
+
+| Mode | Cost per 1,000 profiles | Returns |
+|---|---|---|
+| Short ($4 per 1k) | $4 | Name, headline, LinkedIn URL, current position |
+| Full ($8 per 1k) | $8 | Full profile: work history, education, skills |
+| Full + email search ($12 per 1k) | $12 | Full profile + validated email (SMTP verified) |
+
+Note: Email search is not guaranteed to find an email for every profile. If a profile lacks sufficient information for email verification, you won't be charged for that search attempt.
+
+**Cost:** ~$0.02 per company (actor start) + ~$0.003 per profile (short mode). With CTO fallback for ~40% of companies, expect roughly $0.03 per company total.
 
 **Output:** CSV with one row per company, sorted by `fit_score` (hottest leads first):
 
